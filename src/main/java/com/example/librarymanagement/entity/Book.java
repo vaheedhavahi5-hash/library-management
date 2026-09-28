@@ -1,8 +1,8 @@
-package com.example.library.entity;
+package com.example.librarymanagement.entity;
 import jakarta.persistence.*;
-
 @Entity
-@Table(name = "BOOKS")
+@Table(name = "books")
+
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,13 +14,7 @@ public class Book {
 
     private String category;
 
-    private String isbn;
-
     private Boolean available;
-
-    public Book() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -53,21 +47,12 @@ public class Book {
         this.category = category;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public Boolean getAvailable() {
+    public boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(Boolean available) {
+    public void setAvailable(boolean available) {
         this.available = available;
     }
-// Getters and setters
-}
 
+}
